@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
-import Users from './components/users/users'
-import Calculate from './components/calcu/calcu'
-import UploadFile from './components/upload/upload'
-import Download from './components/download/download'
+// import IndexPage from './routes/IndexPage';
+// import Users from './components/users/users'
+// import Calculate from './components/calcu/calcu'
+// import UploadFile from './components/upload/upload'
+// import Download from './components/download/download'
 import Mainlayout from './components/MainLayout/Layout'
 
 function RouterConfig({ history }) {

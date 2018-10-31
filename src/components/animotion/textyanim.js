@@ -1,5 +1,4 @@
 import Texty from 'rc-texty';
-import Button from 'antd/lib/button';
 import 'rc-texty/assets/index.css';
 import React from 'react'
 

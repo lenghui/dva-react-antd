@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'dva';
-import {Table, Button} from 'antd';
+import {Table} from 'antd';
 
 class Users extends Component{
     constructor(props){

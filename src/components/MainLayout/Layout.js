@@ -1,13 +1,14 @@
 import React from 'react'
 import { Layout, Menu, Icon } from 'antd';
 import {Link} from 'dva/router'
-import {DownLoak} from '../download/download'
+// import {DownLoak} from '../download/download'
 import Users from '../users/users';
-import { Router, Route, Switch } from 'dva/router';
+// import { Router, Route, Switch } from 'dva/router';
+import { Route } from 'dva/router';
 import Calculate from '../calcu/calcu'
 import UploadFile from '../upload/upload'
 import Download from '../download/download'
-import $ from 'jquery'
+// import $ from 'jquery'
 import TextyAnim from '../animotion/textyanim'
 
 const { Header, Content, Footer, Sider } = Layout;
