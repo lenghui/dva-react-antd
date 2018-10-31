@@ -8,6 +8,7 @@ import Calculate from '../calcu/calcu'
 import UploadFile from '../upload/upload'
 import Download from '../download/download'
 import $ from 'jquery'
+import TextyAnim from '../animotion/textyanim'
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -30,20 +31,28 @@ class MainLayout extends React.Component{
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
+            <Link to="/users">
             <Icon type="user" />
-            <span className="nav-text"><Link to="/users">用户列表</Link></span>
+            <span className="nav-text">用户列表</span>
+            </Link>
             </Menu.Item>
             <Menu.Item key="2">
+            <Link to="/calcu">
             <Icon type="video-camera" />
-            <span className="nav-text"><Link to="/calcu">计算器</Link></span>
+            <span className="nav-text">计算器</span>
+            </Link>
             </Menu.Item>
             <Menu.Item key="3">
+            <Link to="/upload">
             <Icon type="upload" />
-            <span className="nav-text"><Link to="/upload">上传</Link></span>
+            <span className="nav-text">上传</span>
+            </Link>
             </Menu.Item>
             <Menu.Item key="4">
+            <Link to="/down">
             <Icon type="bar-chart" />
-            <span className="nav-text"><Link to="/down">下载</Link></span>
+            <span className="nav-text">下载</span>
+            </Link>
             </Menu.Item>
             <Menu.Item key="5">
             <Icon type="cloud-o" />
@@ -64,8 +73,10 @@ class MainLayout extends React.Component{
         </Menu>
         </Sider>
         <Layout style={{ marginLeft: 200 }} >
-        <Header style={{ background: '#fff', padding: 0 }} />
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <Header style={{ background: '#fafafa', padding: 0, textAlign: "center", minHeight: "100px" }} >
+            <TextyAnim></TextyAnim>
+        </Header>
+        <Content style={{ margin: '24px 16px 0', overflow: 'initial', minHeight: "500px" }}>
             <Route path="/users" component={Users} replace/>
             <Route path="/calcu" component={Calculate} replace/>
             <Route path="/upload" component={UploadFile} replace/>

@@ -47,7 +47,6 @@ class Users extends Component{
     render(){
         return(
             <div>
-                <Button type="primary">anniu</Button>
                 <h4>用户列表</h4>
                 <div>
                     {this.castTable()}
