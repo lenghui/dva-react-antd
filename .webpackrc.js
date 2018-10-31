@@ -1,0 +1,24 @@
+export default {
+
+    "extraBabelPlugins": [
+        ["import", {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": true
+        }]
+      ],
+    "proxy": {
+          "/api": {
+          "target": "http://jsonplaceholder.typicode.com/",
+          "changeOrigin": true,
+          "pathRewrite": { "^/api": "" }
+          },
+          "/service": {
+            "target": "http://localhost:2001",
+            "changeOrigin": true,
+            "pathRewrite": {
+              "^/service": "/"
+            }
+          }
+       }
+}
