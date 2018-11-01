@@ -9,8 +9,10 @@ import Calculate from '../calcu/calcu'
 import UploadFile from '../upload/upload'
 import Download from '../download/download'
 import LineChart from '../echarts/lineChart'
+import EchartsTest from '../echarts/barChar'
 // import $ from 'jquery'
 import TextyAnim from '../animotion/textyanim'
+import SubMenu from 'antd/lib/menu/SubMenu';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -56,16 +58,22 @@ class MainLayout extends React.Component{
             <span className="nav-text">下载</span>
             </Link>
             </Menu.Item>
-            <Menu.Item key="5">
-            <Link to="/lineChart">
-            <Icon type="cloud-o" />
-            <span className="nav-text">图表</span>
-            </Link>
-            </Menu.Item>
-            <Menu.Item key="6">
-            <Icon type="appstore-o" />
-            <span className="nav-text">nav 6</span>
-            </Menu.Item>
+            
+            <SubMenu key="sub1"
+                title={<span><Icon type="area-chart" theme="outlined" />图表</span>}>
+                <Menu.Item key="5">
+                <Link to="/lineChart">
+                <Icon type="cloud-o" />
+                <span className="nav-text">图表</span>
+                </Link>
+                </Menu.Item>
+                <Menu.Item key="6">
+                <Link to="/barChart">
+                <Icon type="appstore-o" />
+                <span className="nav-text">柱状图</span>
+                </Link>
+                </Menu.Item>
+            </SubMenu>
             <Menu.Item key="7">
             <Icon type="team" />
             <span className="nav-text">nav 7</span>
@@ -86,6 +94,7 @@ class MainLayout extends React.Component{
             <Route path="/upload" component={UploadFile} replace/>
             <Route path="/down" component={Download} replace/>
             <Route path="/lineChart" component={LineChart} />
+            <Route path="/barChart" component={EchartsTest}  />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED
