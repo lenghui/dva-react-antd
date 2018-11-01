@@ -8,6 +8,7 @@ import { Route } from 'dva/router';
 import Calculate from '../calcu/calcu'
 import UploadFile from '../upload/upload'
 import Download from '../download/download'
+import LineChart from '../echarts/lineChart'
 // import $ from 'jquery'
 import TextyAnim from '../animotion/textyanim'
 
@@ -56,8 +57,10 @@ class MainLayout extends React.Component{
             </Link>
             </Menu.Item>
             <Menu.Item key="5">
+            <Link to="/lineChart">
             <Icon type="cloud-o" />
-            <span className="nav-text">nav 5</span>
+            <span className="nav-text">图表</span>
+            </Link>
             </Menu.Item>
             <Menu.Item key="6">
             <Icon type="appstore-o" />
@@ -82,6 +85,7 @@ class MainLayout extends React.Component{
             <Route path="/calcu" component={Calculate} replace/>
             <Route path="/upload" component={UploadFile} replace/>
             <Route path="/down" component={Download} replace/>
+            <Route path="/lineChart" component={LineChart} />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED
