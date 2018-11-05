@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { connect } from 'dva';
-import {Table} from 'antd';
+import {Table, } from 'antd';
+import EditUser from './editUser'
 
 class Users extends Component{
     constructor(props){
@@ -21,17 +22,26 @@ class Users extends Component{
 
     castTable(){
         const columns = [{
-            title: '姓名',
+            title: '姓氏',
             dataIndex: 'name',
             key: 'name',
           }, {
-            title: '年龄',
+            title: '姓名',
             dataIndex: 'username',
             key: 'username',
           }, {
-            title: '住址',
+            title: '邮箱',
             dataIndex: 'email',
             key: 'email',
+          }, {
+            title: '操作',
+            dataIndex: 'op',
+            key: 'op',
+            render: (text, record) => (
+                            <span>
+                                <EditUser record ={record} />
+                            </span>
+                    )
           }];
           
           return (
@@ -39,6 +49,7 @@ class Users extends Component{
                   <Table 
                   dataSource={this.props.list} 
                   columns={columns} 
+                  rowKey={record => record.id}
                   bordered />
               </div>
           )
