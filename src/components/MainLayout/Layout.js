@@ -13,6 +13,7 @@ import EchartsTest from '../echarts/barChar'
 // import $ from 'jquery'
 import TextyAnim from '../animotion/textyanim'
 import SubMenu from 'antd/lib/menu/SubMenu';
+import WaterChart from '../echarts/waterChart';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -73,6 +74,12 @@ class MainLayout extends React.Component{
                 <span className="nav-text">柱状图</span>
                 </Link>
                 </Menu.Item>
+                <Menu.Item key="16">
+                <Link to="/waterChart">
+                <Icon type="appstore-o" />
+                <span className="nav-text">水波图</span>
+                </Link>
+                </Menu.Item>
             </SubMenu>
             <Menu.Item key="7">
             <Icon type="team" />
@@ -95,6 +102,7 @@ class MainLayout extends React.Component{
             <Route path="/down" component={Download} replace/>
             <Route path="/lineChart" component={LineChart} />
             <Route path="/barChart" component={EchartsTest}  />
+            <Route path="/waterChart" component={WaterChart}  />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED

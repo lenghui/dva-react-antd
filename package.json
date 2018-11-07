@@ -7,10 +7,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@antv/g2": "^3.3.4",
     "dva": "^2.4.0",
     "echarts": "^4.2.0-rc.2",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "viser-react": "^2.4.1"
   },
   "devDependencies": {
     "antd": "^3.10.1",
