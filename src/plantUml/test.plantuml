@@ -1,0 +1,37 @@
+@startuml
+title:时序图
+participant "百川App" as A
+participant "网贷平台" as B
+participant "海尔消金" as C
+
+A->B: 授信请求
+B->C: 授信请求
+alt 授信失败
+    C->B: 授信失败
+    B->A: 授信失败
+else 授信成功
+    C->B: 授信成功
+    B->C: 上传文件
+    alt 文件上传失败
+        C->B: 文件上传失败
+        B->C: 授信失败
+    else 文件上传成功
+        C->B: 文件上传成功
+        B->C: 额度提交申请
+        alt 额度申请失败
+            C->B: 额度申请失败
+            B->A: 授信失败
+        else 额度申请成功
+            C->B: 额度申请成功
+            B->A: 授信成功
+        end
+        
+    end
+    
+end
+
+
+
+
+
+@enduml
